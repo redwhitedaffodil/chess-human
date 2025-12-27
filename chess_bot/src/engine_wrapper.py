@@ -1,7 +1,7 @@
 """Stockfish engine wrapper for chess analysis."""
 import chess
 import chess.engine
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Tuple
 from dataclasses import dataclass
 
 
@@ -49,7 +49,7 @@ class EngineWrapper:
             self.engine.quit()
             self.engine = None
     
-    def _score_to_centipawns(self, score: chess.engine.Score, board: chess.Board) -> tuple[int, bool, Optional[int]]:
+    def _score_to_centipawns(self, score: chess.engine.Score, board: chess.Board) -> Tuple[int, bool, Optional[int]]:
         """
         Convert a score to centipawns from current player's perspective.
         

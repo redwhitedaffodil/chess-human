@@ -3,7 +3,7 @@ import chess
 import numpy as np
 import random
 import time
-from typing import List, Optional
+from typing import List, Optional, Tuple
 from .engine_wrapper import MoveEvaluation
 
 
@@ -135,7 +135,7 @@ class Humanizer:
         delay = random.uniform(self.min_move_time, self.max_move_time)
         time.sleep(delay)
     
-    def should_move(self, evaluations: List[MoveEvaluation]) -> tuple[bool, Optional[chess.Move]]:
+    def should_move(self, evaluations: List[MoveEvaluation]) -> Tuple[bool, Optional[chess.Move]]:
         """
         Decide whether to make a move and which move to make.
         

@@ -1,6 +1,6 @@
 """Board parser module for extracting chess board state from DOM."""
 import chess
-from typing import Optional
+from typing import Optional, Tuple
 from selenium.webdriver.remote.webelement import WebElement
 
 
@@ -50,7 +50,7 @@ class BoardParser:
             return None
     
     @staticmethod
-    def _parse_piece_class(piece_class: str) -> Optional[tuple[str, str]]:
+    def _parse_piece_class(piece_class: str) -> Optional[Tuple[str, str]]:
         """
         Parse piece type and color from CSS class.
         

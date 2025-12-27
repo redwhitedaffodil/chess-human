@@ -76,13 +76,6 @@ class TestMoveExecutor(unittest.TestCase):
         self.assertEqual(x, 450)
         self.assertEqual(y, 30)
     
-    def test_uci_to_squares(self):
-        """Test UCI move conversion to squares."""
-        from_sq, to_sq = self.executor._uci_to_squares('e2e4')
-        
-        self.assertEqual(from_sq, chess.E2)
-        self.assertEqual(to_sq, chess.E4)
-    
     @patch('chess_bot.src.move_executor.ActionChains')
     def test_execute_move(self, mock_action_chains):
         """Test move execution."""

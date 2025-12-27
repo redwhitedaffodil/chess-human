@@ -63,19 +63,6 @@ class MoveExecutor:
         
         return (x, y)
     
-    def _uci_to_squares(self, uci_move: str) -> Tuple[chess.Square, chess.Square]:
-        """
-        Convert UCI move string to source and destination squares.
-        
-        Args:
-            uci_move: UCI format move (e.g., 'e2e4', 'd7d5')
-            
-        Returns:
-            Tuple of (from_square, to_square)
-        """
-        move = chess.Move.from_uci(uci_move)
-        return (move.from_square, move.to_square)
-    
     def execute_move(self, move: chess.Move):
         """
         Execute a chess move by clicking on the board.
